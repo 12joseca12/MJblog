@@ -1,0 +1,47 @@
+{
+  "theme": {
+    "light": {
+      "background": {
+        "primary": "#ffffff",
+        "secondary": "#f8fafc"
+      },
+      "text": {
+        "body": "#3f3f46",
+        "muted": "#71717a",
+        "inverse": "#000000"
+      },
+      "brand": {
+        "primary": "#10b981",
+        "primaryDark": "#0f766e"
+      }
+    },
+    "dark": {
+      "background": {
+        "primary": "#020617",
+        "secondary": "#0f172a"
+      },
+      "text": {
+        "body": "#f1f5f9",
+        "muted": "#94a3b8",
+        "inverse": "#ffffff"
+      },
+      "brand": {
+        "primary": "#10b981",
+        "primaryDark": "#0c5f52"
+      }
+    }
+  },
+  "radius": {
+    "radius0": "0px",
+    "radius8": "8px",
+    "radius16": "16px",
+    "radius100": "9999px"
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px"
+  }
+}

@@ -1,2 +1,0 @@
-# MJblog
-Couple Travell blog

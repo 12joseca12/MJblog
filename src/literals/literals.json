@@ -1,0 +1,25 @@
+{
+  "app": {
+    "title": "MJBlog",
+    "subtitle": "Un viaje en pareja contado desde dos puntos de vista"
+  },
+  "home": {
+    "heroTitle": "Explora nuestros viajes",
+    "heroSubtitle": "Consejos reales, presupuestos reales, experiencias reales",
+    "featuredSectionTitle": "¿Qué encontrarás en el blog?"
+  },
+  "posts": {
+    "pageTitle": "Entradas",
+    "emptyMessage": "Todavía no hay publicaciones"
+  },
+  "travels": {
+    "pageTitle": "Viajes",
+    "emptyMessage": "Aún no hemos publicado rutas"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "back": "Volver",
+    "readMore": "Leer más"
+  }
+}

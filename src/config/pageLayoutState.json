@@ -1,0 +1,13 @@
+{
+  "home": {
+    "hero": true,
+    "featured": true
+  },
+  "posts": {
+    "postsList": true
+  },
+  "travels": {
+    "travelsList": true,
+    "travelsSummary": false
+  }
+}
