@@ -13,18 +13,15 @@ type DockItem = {
 type FloatingDockProps = {
   items: DockItem[];
   className?: string;
-mobileClassName?: string; 
 };
 
-export function FloatingDock({
-  items,
-  className,
-}: FloatingDockProps) {
+export function FloatingDock({ items, className }: FloatingDockProps) {
   return (
     <nav
       className={cn(
-        "inline-flex items-end gap-3 rounded-full bg-neutral-900/5 px-3 py-2 shadow-lg backdrop-blur-md dark:bg-neutral-50/5",
-        "max-w-full",
+        // altura fija y deja salir el contenido por arriba
+        "flex h-16 items-center justify-center gap-5 rounded-2xl bg-neutral-900/5 px-5 shadow-lg backdrop-blur-md",
+        "dark:bg-neutral-50/5 min-w-[260px] overflow-visible",
         className
       )}
     >
@@ -32,23 +29,35 @@ export function FloatingDock({
         <Link
           key={item.title}
           href={item.href}
-          className="group flex flex-col items-center justify-end"
+          className={cn(
+            "group flex flex-col items-center justify-center gap-1",
+            "transition-all duration-200"
+          )}
         >
+          {/* ICONO: crece y se eleva, sin cambiar layout del dock */}
           <div
             className={cn(
               "flex h-10 w-10 items-center justify-center rounded-2xl",
-              "bg-neutral-100/80 text-neutral-800 shadow-sm transition-all duration-200",
-              "group-hover:h-11 group-hover:w-11 group-hover:rounded-3xl",
-              "dark:bg-neutral-800/80 dark:text-neutral-100"
+              "bg-neutral-100/80 text-neutral-800 shadow-sm",
+              "dark:bg-neutral-800/80 dark:text-neutral-100",
+              "transition-transform duration-200 origin-bottom",
+              // crece bastante y sube un poco
+              "group-hover:scale-125 group-hover:-translate-y-1"
             )}
           >
-            <div className="h-5 w-5">{item.icon}</div>
+            <div className="flex h-5 w-5 items-center justify-center">
+              {item.icon}
+            </div>
           </div>
+
+          {/* TEXTO: siempre visible, crece y sube ligeramente */}
           <span
             className={cn(
-              "mt-1 text-[0.7rem] font-medium text-neutral-500",
-              "opacity-0 transition-all duration-200 group-hover:opacity-100",
-              "dark:text-neutral-300"
+              "text-[0.7rem] font-medium text-neutral-500 dark:text-neutral-300",
+              "leading-none",
+              "transition-transform duration-200",
+              "group-hover:scale-115 group-hover:-translate-y-0.5",
+              "group-hover:text-neutral-900 dark:group-hover:text-white"
             )}
           >
             {item.title}
