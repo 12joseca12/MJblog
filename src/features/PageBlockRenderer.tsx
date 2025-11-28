@@ -7,6 +7,7 @@ import { FeaturedBlock } from "@/components/FeaturedBlock";
 import { PostsListBlock } from "@/components/PostsListBlock";
 import { TravelsListBlock } from "@/components/TravelListBlock";
 import { TravelsSummaryBlock } from "@/components/TravelSummaryBlock";
+import { SpanHomeServices } from "@/components/SpanHomeServices";
 
 const BLOCK_REGISTRY: Record<BlockKey, React.ComponentType<any>> = {
   hero: HeroBlock,
@@ -14,6 +15,7 @@ const BLOCK_REGISTRY: Record<BlockKey, React.ComponentType<any>> = {
   postsList: PostsListBlock,
   travelsList: TravelsListBlock,
   travelsSummary: TravelsSummaryBlock,
+  spanServices: SpanHomeServices
 };
 
 export function PageBlocksRenderer({ page }: { page: PageKey }) {

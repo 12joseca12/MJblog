@@ -1,13 +1,16 @@
 {
   "home": {
     "hero": true,
+    "featured": false,
+    "spanServices": true
+  },
+  "blog": {
     "featured": true
   },
-  "posts": {
-    "postsList": true
+  "itinerary": {
+    "featured": true
   },
-  "travels": {
-    "travelsList": true,
-    "travelsSummary": false
+  "services":{
+    "featured": true
   }
 }

@@ -1,12 +1,26 @@
 {
   "app": {
-    "title": "MJBlog",
-    "subtitle": "Un viaje en pareja contado desde dos puntos de vista"
+    "title": "MJ-Blog",
+    "subtitle": "Una pareja de viajeros, conoce nuestros viajes, saca ideas o pídenos que te organicemos tu siguiente viaje."
   },
   "home": {
-    "heroTitle": "Explora nuestros viajes",
-    "heroSubtitle": "Consejos reales, presupuestos reales, experiencias reales",
-    "featuredSectionTitle": "¿Qué encontrarás en el blog?"
+    "heroTitle": "MJ-Blog",
+    "heroSubtitle": "Una pareja de viajeros, conoce nuestros viajes, saca ideas o pídenos que te organicemos tu siguiente viaje.",
+    "heroPrimaryCta": "Te organizamos tu siguiente viaje",
+    "heroSecondaryExplore": "Explora nuestros viajes",
+    "heroSecondarySteps": "Conoce cada paso",
+    "featuredSectionTitle": "¿Qué encontrarás en el blog?",
+    "heroImages": [
+      "https://imgs.search.brave.com/9Mb3kXFzgRcsYInK21jbeEI31_ONLlxeq6fWB7ygLKA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9wbGF5/YS1mZXJyb3ZpYXJp/YS1jb24tbGFyZ2Et/Y29sYS1lbi1rcmFi/aS10YWlsYW5kaWEt/Mzc3MzYyMjIwLmpw/Zw",
+      "https://imgs.search.brave.com/Ib6GS3rOa190Wp1U4hynvgNkomBJTV05NAgsp-Xz6kE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzIyLzIxLzY4/LzM2MF9GXzUyMjIx/NjgwMl9BY0JWaU1L/N0RGcE9VWnI0cHc5/b1lRdXlKZ2VWQ0Vt/VC5qcGc",
+      "https://imgs.search.brave.com/Pwul6kqFhhXcxT0wS4gaL2ON2jApBp6-rSR8FiS5TP0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI4/MTYzNzMzNy9pdC9m/b3RvL2NpdHlzY2Fw/ZS1vZi1yb21lLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1B/bUpMQk1SMkMxVUtv/eC0zRU9uREs5djVo/M0dnLXBsTHBIX01Q/Vld4TWlZPQ",
+      "https://imgs.search.brave.com/z6jORbnH7wzMFRKEU374cSBiopNpV3Q6fbQBCaj7YH0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQz/OTY0MzU4Mi9waG90/by9uZXcteW9yay1j/aXR5LXNreWxpbmUt/YW5kLXN0YXR1ZS1v/Zi1saWJlcnR5LWF0/LWR1c2suanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPXB2aTdS/SzF3LU5WOFhIVXYt/ZWY2aE04YnhGQTZm/dXFqMGMtcUh6VzZv/ZmM9",
+      "https://imgs.search.brave.com/-6V4EHgmSq4KGREtBQzu_MhTxQKQZwMDGS2jZypslPs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vYmxvb2R1YS9i/bG9vZHVhMjIwNS9i/bG9vZHVhMjIwNTAw/ODcxLzE4ODI4MjEw/MC1sYS1iYW5kZXJh/LXN1aXphLXktZWwt/dmFsbGUtZGUtbGF1/dGVyYnJ1bm5lbi1l/bi11bi1oZXJtb3Nv/LWQlQzMlQURhLWRl/LXZlcmFuby1zdWl6/YS5qcGc_dmVyPTY",
+      "https://imgs.search.brave.com/ebLZswn3ewTU6a5AyelWs_nVATk7zBYuhwWKy0l8nw8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTIx/NzE3NzkyL3Bob3Rv/L2xha2UtY29tby1p/dGFseS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9SnZmNUZL/SWsxcjg1M3dFOWJi/MmlmZjJxQU9PZnRm/ZC1nY1lxY3FsMGs3/bz0"
+    ],
+    "spanServicesTitle": "¿Listo para tu Propia Aventura?",
+    "spanServicesSubtitle": "Ofrecemos servicios personalizados de planificación de viajes para crear experiencias inolvidables, hechas a tu medida.",
+    "spanServicesCta": "Conoce Nuestros Servicios"
   },
   "posts": {
     "pageTitle": "Entradas",

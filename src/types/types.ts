@@ -1,7 +1,7 @@
 /** -------------------------------------------
  *  PAGE KEYS (rutas de la app)
  ------------------------------------------- */
-export type PageKey = "home" | "posts" | "travels";
+export type PageKey = "home" | "blog" | "itinerary" | "services";
 
 /** -------------------------------------------
  *  BLOCK KEYS (bloques disponibles)
@@ -11,7 +11,8 @@ export type BlockKey =
   | "featured"
   | "postsList"
   | "travelsList"
-  | "travelsSummary";
+  | "travelsSummary"
+  | "spanServices";
 
 /** -------------------------------------------
  *  MODELOS DE DATOS (siempre aquí)
@@ -93,7 +94,14 @@ export type LiteralsJson = {
   home: {
     heroTitle: string;
     heroSubtitle: string;
+    heroPrimaryCta: string;
+    heroSecondaryExplore: string;
+    heroSecondarySteps: string;
     featuredSectionTitle: string;
+    heroImages: string[];
+    spanServicesTitle: string;
+    spanServicesSubtitle: string;
+    spanServicesCta: string;
   };
   posts: {
     pageTitle: string;

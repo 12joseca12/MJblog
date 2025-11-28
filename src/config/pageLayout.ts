@@ -1,7 +1,8 @@
 import type { PageKey, BlockKey } from "@/types/types";
 
 export const basePageLayoutConfig: Record<PageKey, BlockKey[]> = {
-  home: ["hero", "featured"],
-  posts: ["postsList"],
-  travels: ["travelsList", "travelsSummary"],
+  home: ["hero", "featured", "spanServices"],
+  blog: ["postsList"],
+  itinerary: ["travelsList", "travelsSummary"],
+  services: ["featured"],
 };

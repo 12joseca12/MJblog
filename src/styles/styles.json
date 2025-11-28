@@ -2,32 +2,32 @@
   "theme": {
     "light": {
       "background": {
-        "primary": "#ffffff",
-        "secondary": "#f8fafc"
+        "primary": "#EAE6DF",   
+        "secondary": "#DDE9F0"  
       },
       "text": {
-        "body": "#3f3f46",
-        "muted": "#71717a",
-        "inverse": "#000000"
+        "body": "#2B3438",     
+        "muted": "#437056",    
+        "inverse": "#EAE6DF"   
       },
       "brand": {
-        "primary": "#10b981",
-        "primaryDark": "#0f766e"
+        "primary": "#D98F68",  
+        "primaryDark": "#437056"
       }
     },
     "dark": {
       "background": {
-        "primary": "#020617",
-        "secondary": "#0f172a"
+        "primary": "#2B3438",  
+        "secondary": "#437056"
       },
       "text": {
-        "body": "#f1f5f9",
-        "muted": "#94a3b8",
-        "inverse": "#ffffff"
+        "body": "#EAE6DF",    
+        "muted": "#DDE9F0", 
+        "inverse": "#2B3438"   
       },
       "brand": {
-        "primary": "#10b981",
-        "primaryDark": "#0c5f52"
+        "primary": "#D98F68",  
+        "primaryDark": "#437056"
       }
     }
   },

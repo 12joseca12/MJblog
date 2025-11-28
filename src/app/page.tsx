@@ -1,8 +1,17 @@
-import { PageBlocksRenderer } from "@/features/PageBlockRenderer"
+"use client";
+import { PageBlocksRenderer } from "@/features/PageBlockRenderer";
+import { useThemeStyles } from "@/app/theme/ThemeProvider";
 
 export default function HomePage() {
+  const { styles } = useThemeStyles();
+
   return (
-    <main className="min-h-screen w-full flex flex-col items-center justify-start py-10 px-4">
+    <main
+      className="min-h-screen w-full"
+      style={{
+        backgroundColor: styles.background.primary,
+      }}
+    >
       <PageBlocksRenderer page="home" />
     </main>
   );

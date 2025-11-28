@@ -126,3 +126,11 @@
     display: none !important;
   }
 }
+
+* {
+  scrollbar-width: none !important; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari */
+}

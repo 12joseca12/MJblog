@@ -58,11 +58,11 @@ export function BottomDockBar() {
     <div
       className="pointer-events-none fixed inset-x-0 bottom-0 z-40 w-full"
       style={{
-        backgroundColor: isDark ? "rgba(0,0,0,0.30)" : "rgba(255,255,255,0.55)",
+        backgroundColor: isDark ? "rgba(0,0,0,0.30)" : "rgba(255,255,255,0.25)",
         backdropFilter: "blur(18px)",
       }}
     >
-      <div className="w-full px-4 pb-4 pt-2">
+      <div className="w-full px-2 pb-1">
         <div
           className="mx-auto w-full"
           style={{
@@ -73,7 +73,14 @@ export function BottomDockBar() {
             <ScrollProgress />
           </div>
 
-          <div className="pointer-events-auto flex items-center justify-between gap-3 rounded-2xl border border-white/10 px-3 py-2">
+          <div
+            className="pointer-events-auto flex items-center justify-between gap-3 rounded-2xl border  px-3 py-2"
+            style={{
+              borderColor: isDark
+                ? "rgba(234, 230, 223, 0.30)"
+                : "rgba(43, 52, 56, 0.30)",
+            }}
+          >
             <div className="flex items-center gap-3">
               <button
                 type="button"
@@ -94,7 +101,8 @@ export function BottomDockBar() {
                   onCheckedChange={(checked) =>
                     setTheme(checked ? "dark" : "light")
                   }
-                  className="peer h-7 w-16 rounded-full bg-neutral-300 dark:bg-neutral-700 data-[state=checked]:bg-neutral-900 dark:data-[state=checked]:bg-neutral-200"/>
+                  className="peer h-7 w-16 rounded-full bg-neutral-300 dark:bg-neutral-700 data-[state=checked]:bg-neutral-900 dark:data-[state=checked]:bg-neutral-200"
+                />
                 <span className="pointer-events-none absolute left-1 flex h-4 w-4 items-center justify-center text-neutral-700 dark:text-neutral-300 transition-opacity duration-200 opacity-40 peer-data-[state=checked]:opacity-100">
                   <MoonIcon size={14} />
                 </span>

@@ -9,16 +9,16 @@ type Props = {
 };
 
 const variants = {
-  initial: { opacity: 0, x: 40 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -40 }
+  initial: { x: "100%" },
+animate: { x: 0 },
+exit: { x: "-20%", opacity: 0 }
 };
 
 export function PageTransition({ children }: Props) {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="popLayout" initial={true}>
       <motion.div
         key={pathname}
         variants={variants}
@@ -26,7 +26,7 @@ export function PageTransition({ children }: Props) {
         animate="animate"
         exit="exit"
         transition={{
-          duration: 0.25,
+          duration: 0.1,
           ease: "easeInOut",
         }}
         className="min-h-full"
