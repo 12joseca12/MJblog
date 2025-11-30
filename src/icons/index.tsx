@@ -8,6 +8,8 @@ import {
   SearchIcon,
   ArrowRightIcon,
 } from "lucide-react";
+export { ArrowLeft as ArrowLeftIcon } from "lucide-react";
+
 
 export const HomeIcon = IconHome;
 

@@ -36,22 +36,20 @@ export function SpanHomeServices() {
         <div className="flex justify-center">
           <Link
             href="/services"
-            className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-sm font-semibold sm:text-base
-                       transition-all duration-150
-                       shadow-[6px_6px_16px_rgba(0,0,0,0.18),_-6px_-6px_16px_rgba(255,255,255,0.7)]
-                       hover:shadow-[3px_3px_10px_rgba(0,0,0,0.25),_-3px_-3px_10px_rgba(255,255,255,0.6)]
-                       hover:translate-y-[1px]"
+            className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-sm font-semibold sm:text-base transition-all duration-150 shadow-[6px_6px_16px_rgba(0,0,0,0.18),_-6px_-6px_16px_rgba(255,255,255,0.7)] hover:shadow-[3px_3px_10px_rgba(0,0,0,0.25),_-3px_-3px_10px_rgba(255,255,255,0.6)] hover:translate-y-[1px]"
             style={{
-              // Botón en Sage Forest (brand.primary), texto claro
               backgroundColor: styles.brand.primary,
               color: styles.text.inverse,
             }}
           >
-            {cta}
+            {/* Evita warnings si el literal cambia entre SSR y cliente */}
+            <span suppressHydrationWarning>{cta}</span>
           </Link>
         </div>
       </div>
-      <div className="w-48 h-24"></div> {/* Eliminar en produccion */}
+
+      {/* Separador temporal (para pruebas) */}
+      <div className="w-48 h-24" /> {/* Eliminar en producción */}
     </section>
   );
 }
