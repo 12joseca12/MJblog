@@ -117,4 +117,78 @@ export type LiteralsJson = {
     back: string;
     readMore: string;
   };
+  auth: {
+    introTitle: string;
+    introSubtitle: string;
+    loginTitle: string;
+    signupTitle: string;
+    emailLabel: string;
+    passwordLabel: string;
+    repeatPasswordLabel: string;
+    nameLabel: string;
+    acceptPoliciesLabel: string;
+    loginButton: string;
+    signupButton: string;
+    noAccountCta: string;
+    haveAccountCta: string;
+  };
+  userArea: {
+    title: string;
+    actionsTitle: string;
+    logoutBtn: string;
+    deleteAccountBtn: string;
+    supportTitle: string;
+    contactBtn: string;
+    chatCtaTitle: string;
+    chatCtaText: string;
+    chatCtaBtn: string;
+    travelCtaTitle: string;
+    travelCtaText: string;
+    travelCtaBtn: string;
+    modalLogoutTitle: string;
+    modalLogoutText: string;
+    modalDeleteTitle: string;
+    modalDeleteText: string;
+    cancelBtn: string;
+    confirmBtn: string;
+    processingBtn: string;
+    chatHeader: string;
+    chatSubHeader: string;
+    chatPlaceholder: string;
+    sendBtn: string;
+    travelWidget: {
+      title: string;
+      scheduleCall: string;
+      hirePlan: string;
+      justAsking: string;
+      speakToAgent: string;
+    };
+  };
+  firebaseErrors: {
+    emailAlreadyInUse: string;
+    invalidEmail: string;
+    userNotFound: string;
+    wrongPassword: string;
+    weakPassword: string;
+    default: string;
+  };
+};
+
+export type RTChatMessage = {
+  id: string;
+  text: string;
+  from: "user" | "system";
+  createdAt: number | null;
+  read?: boolean;
+};
+
+export type ConfirmType = "logout" | "delete" | null;
+
+import type { User } from "firebase/auth";
+export type { User };
+
+export type UserAreaProps = {
+  onClose: () => void;
+  currentUser: User;
+  defaultChatOpen?: boolean;
 };

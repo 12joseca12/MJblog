@@ -3,7 +3,7 @@
     "light": {
       "background": {
         "primary": "#EAE6DF",   
-        "secondary": "#DDE9F0"  
+        "secondary": "#92b6cc"  
       },
       "text": {
         "body": "#2B3438",     
@@ -18,7 +18,7 @@
     "dark": {
       "background": {
         "primary": "#2B3438",  
-        "secondary": "#437056"
+        "secondary": "#4f6f81"
       },
       "text": {
         "body": "#EAE6DF",    

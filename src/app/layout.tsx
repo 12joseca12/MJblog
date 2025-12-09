@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./theme/ThemeProvider";
 import { BottomDockBar } from "@/components/BottomDockBar";
 import { PageTransition } from "@/components/PageTransition";
+import { GlobalChatButton } from "@/components/GlobalChatButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +31,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider><PageTransition>{children}</PageTransition><BottomDockBar /></ThemeProvider>
-        
+        <ThemeProvider><PageTransition>{children}</PageTransition><BottomDockBar /><GlobalChatButton /></ThemeProvider>
+
       </body>
     </html>
   );

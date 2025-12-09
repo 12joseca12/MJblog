@@ -35,5 +35,61 @@
     "error": "Algo salió mal",
     "back": "Volver",
     "readMore": "Leer más"
+  },
+    "auth": {
+    "introTitle": "Entra en tu espacio personal",
+    "introSubtitle": "Guarda tus post favoritos para coger ideas, seguir nuestras historias y descubrir el mundo.",
+    "loginTitle": "Inicia sesión",
+    "signupTitle": "Crea tu cuenta",
+    "emailLabel": "Email",
+    "passwordLabel": "Contraseña",
+    "repeatPasswordLabel": "Repite tu contraseña",
+    "nameLabel": "Nombre",
+    "acceptPoliciesLabel": "He leído y acepto la política de privacidad y las condiciones de uso.",
+    "loginButton": "Entrar",
+    "signupButton": "Crear cuenta",
+    "noAccountCta": "¿No tienes cuenta? Crear una",
+    "haveAccountCta": "¿Ya tienes cuenta? Inicia sesión"
+  },
+  "userArea": {
+    "title": "Configuración de la Cuenta",
+    "actionsTitle": "Acciones de la cuenta",
+    "logoutBtn": "Cerrar sesión",
+    "deleteAccountBtn": "Eliminar cuenta",
+    "supportTitle": "Soporte",
+    "contactBtn": "Contactarnos",
+    "chatCtaTitle": "¿Alguna duda? Háblanos",
+    "chatCtaText": "Si necesitas ayuda con tu cuenta, tus viajes o cualquier detalle de la web, estamos al otro lado del chat.",
+    "chatCtaBtn": "Comienza un Chat",
+    "travelCtaTitle": "¿Listo para tu próximo destino?",
+    "travelCtaText": "Déjanos la planificación a nosotros y tú solo encárgate de disfrutar. Cuéntanos tu idea y la haremos realidad.",
+    "travelCtaBtn": "¿Te organizamos tu siguiente viaje?",
+    "modalLogoutTitle": "Cerrar sesión",
+    "modalLogoutText": "¿Seguro que quieres cerrar sesión?",
+    "modalDeleteTitle": "Eliminar cuenta",
+    "modalDeleteText": "Esta acción eliminará tu cuenta de forma permanente. ¿Seguro que quieres continuar?",
+    "cancelBtn": "Cancelar",
+    "confirmBtn": "Confirmar",
+    "processingBtn": "Procesando...",
+    "chatHeader": "Chat con MJ-Blog",
+    "chatSubHeader": "Te respondemos lo antes posible.",
+    "chatPlaceholder": "Escribe tu mensaje...",
+    "sendBtn": "Enviar",
+    "travelWidget": {
+      "title": "¿Necesitas ayuda más específica?",
+      "scheduleCall": "Agendar una llamada sin compromiso",
+      "hirePlan": "Contratar un plan",
+      "justAsking": "Solo estoy preguntando",
+      "speakToAgent": "Hablar con uno de nuestros agentes"
+    }
+  },
+  "firebaseErrors": {
+    "emailAlreadyInUse": "Ya existe una cuenta con este email.",
+    "invalidEmail": "El email no es válido.",
+    "userNotFound": "Email o contraseña incorrectos.",
+    "wrongPassword": "Email o contraseña incorrectos.",
+    "weakPassword": "La contraseña es demasiado débil.",
+    "default": "Ha ocurrido un error al procesar tu solicitud. Inténtalo de nuevo."
   }
+
 }

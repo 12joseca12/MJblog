@@ -1,6 +1,7 @@
+// src/components/BottomDockBar.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FloatingDock } from "./ui/floating-dock";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
@@ -20,10 +21,39 @@ import {
 } from "@/icons";
 import { ProfileOverlay } from "@/components/ProfileOverlay";
 
+import { auth, subscribeToUnreadSystemMessages } from "@/lib/firebase";
+import { onAuthStateChanged, type User } from "firebase/auth";
+
 export function BottomDockBar() {
   const { theme, setTheme } = useThemeStyles();
   const isDark = theme === "dark";
+
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  // Escuchar estado de auth
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // Escuchar mensajes no leídos (solo si hay usuario)
+  useEffect(() => {
+    if (!currentUser) {
+      setUnreadCount(0);
+      return;
+    }
+
+    const unsub = subscribeToUnreadSystemMessages(
+      currentUser.uid,
+      (count) => setUnreadCount(count)
+    );
+
+    return () => unsub();
+  }, [currentUser]);
 
   const dockItems = [
     {
@@ -55,6 +85,14 @@ export function BottomDockBar() {
       href: "/services",
     },
   ];
+
+  // Inicial del usuario
+  const userInitial = currentUser
+    ? (currentUser.displayName?.[0] ??
+      currentUser.email?.[0] ??
+      "?"
+    ).toUpperCase()
+    : null;
 
   return (
     <>
@@ -89,11 +127,23 @@ export function BottomDockBar() {
                   onClick={() => setIsProfileOpen(true)}
                   className="rounded-full bg-black/5 p-1 dark:bg-white/10"
                 >
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback>
-                      <UserRoundIcon size={16} className="opacity-70" />
-                    </AvatarFallback>
-                  </Avatar>
+                  <div className="relative">
+                    <Avatar className="h-9 w-9">
+                      <AvatarFallback className="flex items-center justify-center text-sm font-semibold">
+                        {userInitial ? (
+                          userInitial
+                        ) : (
+                          <UserRoundIcon size={16} className="opacity-70" />
+                        )}
+                      </AvatarFallback>
+                    </Avatar>
+
+                    {unreadCount > 0 && (
+                      <span className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[0.6rem] font-semibold leading-none text-white">
+                        {unreadCount > 9 ? "9+" : unreadCount}
+                      </span>
+                    )}
+                  </div>
                 </button>
 
                 <div className="h-8 w-px bg-neutral-300 dark:bg-neutral-700 hide-on-mobile" />
@@ -141,9 +191,12 @@ export function BottomDockBar() {
           </div>
         </div>
       </div>
+
+      {/* Overlay de perfil */}
       <ProfileOverlay
         isOpen={isProfileOpen}
         onClose={() => setIsProfileOpen(false)}
+        currentUser={currentUser}
       />
     </>
   );
