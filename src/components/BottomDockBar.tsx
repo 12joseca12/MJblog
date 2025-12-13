@@ -20,17 +20,21 @@ import {
   ArrowRightIcon,
 } from "@/icons";
 import { ProfileOverlay } from "@/components/ProfileOverlay";
+import { UserArea } from "./UserArea";
+import { AuthForm } from "./AuthForm";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { auth, subscribeToUnreadSystemMessages } from "@/lib/firebase";
 import { onAuthStateChanged, type User } from "firebase/auth";
 
 export function BottomDockBar() {
-  const { theme, setTheme } = useThemeStyles();
+  const { theme, setTheme, styles } = useThemeStyles();
   const isDark = theme === "dark";
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [unreadCount, setUnreadCount] = useState(0);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   // Escuchar estado de auth
   useEffect(() => {
@@ -170,23 +174,14 @@ export function BottomDockBar() {
                 <FloatingDock items={dockItems} />
               </div>
 
-              {/* DERECHA: buscador */}
-              <form className="relative hidden min-w-[9rem] max-w-[14rem] md:block">
-                <Input
-                  className="h-9 w-full ps-8 pe-8 text-sm"
-                  placeholder="Buscar..."
-                  type="search"
-                />
-                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-2">
-                  <SearchIcon size={14} />
-                </div>
-                <button
-                  type="submit"
-                  className="absolute inset-y-0 end-0 flex w-8 items-center justify-center"
-                >
-                  <ArrowRightIcon size={14} />
-                </button>
-              </form>
+              {/* DERECHA: Botón de Chat */}
+              <button
+                onClick={() => setIsChatOpen(true)}
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-transparent p-0 transition hover:bg-black/5 dark:hover:bg-white/10"
+                style={{ color: styles.text.body }}
+              >
+                <span className="text-xl">💬</span>
+              </button>
             </div>
           </div>
         </div>
@@ -198,6 +193,44 @@ export function BottomDockBar() {
         onClose={() => setIsProfileOpen(false)}
         currentUser={currentUser}
       />
+
+      {/* Chat Overlay */}
+      <AnimatePresence>
+        {isChatOpen && (
+          <motion.div
+            className="fixed inset-y-0 right-0 z-50 w-full sm:w-[24rem] md:w-[26rem] shadow-2xl"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 260, damping: 30 }}
+            style={{ backgroundColor: styles.background.primary }}
+          >
+            {/* Close button header */}
+            <div className="flex justify-end p-2 absolute top-0 right-0 z-50">
+              <button
+                onClick={() => setIsChatOpen(false)}
+                className="rounded-full px-3 py-1 text-sm font-bold bg-black/5 hover:bg-black/10 transition"
+              >
+                ✕
+              </button>
+            </div>
+
+            {currentUser ? (
+              <div className="h-full">
+                <UserArea
+                  currentUser={currentUser}
+                  onClose={() => setIsChatOpen(false)}
+                  defaultChatOpen={true}
+                />
+              </div>
+            ) : (
+              <div className="h-full pt-10">
+                <AuthForm onSuccess={() => { /* User arg in useEffect will handle state update */ }} />
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
