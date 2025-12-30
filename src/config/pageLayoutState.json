@@ -10,7 +10,10 @@
   "itinerary": {
     "featured": true
   },
-  "services":{
+  "services": {
+    "featured": true
+  },
+  "admin": {
     "featured": true
   }
 }

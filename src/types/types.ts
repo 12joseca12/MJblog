@@ -1,7 +1,7 @@
 /** -------------------------------------------
  *  PAGE KEYS (rutas de la app)
  ------------------------------------------- */
-export type PageKey = "home" | "blog" | "itinerary" | "services";
+export type PageKey = "home" | "blog" | "itinerary" | "services" | "admin";
 
 /** -------------------------------------------
  *  BLOCK KEYS (bloques disponibles)

@@ -5,4 +5,5 @@ export const basePageLayoutConfig: Record<PageKey, BlockKey[]> = {
   blog: ["postsList"],
   itinerary: ["travelsList", "travelsSummary"],
   services: ["featured"],
+  admin: ["featured"],
 };

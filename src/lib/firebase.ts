@@ -43,6 +43,19 @@ export const storage = getStorage(app);
 export const auth = getAuth(app);
 export const rtdb = getDatabase(app);
 
+export async function establishServerSession() {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const idToken = await user.getIdToken(true);
+
+  await fetch("/api/auth/session", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ idToken }),
+  });
+}
+
 export async function signUpWithEmail(
   name: string,
   email: string,
@@ -54,6 +67,8 @@ export async function signUpWithEmail(
     await updateProfile(cred.user, { displayName: name.trim() });
   }
 
+  await establishServerSession();
+
   return cred;
 }
 
@@ -61,13 +76,13 @@ export async function loginWithEmail(
   email: string,
   password: string
 ): Promise<UserCredential> {
-  return signInWithEmailAndPassword(auth, email, password);
+  const cred = await signInWithEmailAndPassword(auth, email, password);
+  await establishServerSession();
+  return cred;
 }
 
-// getFirebaseAuthErrorMessage moved to @/lib/firebaseHelper
-
-
 export async function logoutUser() {
+  await fetch("/api/auth/logout", { method: "POST" });
   await signOut(auth);
 }
 
@@ -235,3 +250,4 @@ export async function markSystemMessagesAsRead(userId: string) {
     }
   );
 }
+
