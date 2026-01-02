@@ -36,7 +36,7 @@
     "back": "Volver",
     "readMore": "Leer más"
   },
-    "auth": {
+  "auth": {
     "introTitle": "Entra en tu espacio personal",
     "introSubtitle": "Guarda tus post favoritos para coger ideas, seguir nuestras historias y descubrir el mundo.",
     "loginTitle": "Inicia sesión",
@@ -90,6 +90,8 @@
     "wrongPassword": "Email o contraseña incorrectos.",
     "weakPassword": "La contraseña es demasiado débil.",
     "default": "Ha ocurrido un error al procesar tu solicitud. Inténtalo de nuevo."
+  },
+  "admin": {
+    "exit": "Salir"
   }
-
 }

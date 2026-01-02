@@ -172,6 +172,9 @@ export type LiteralsJson = {
     weakPassword: string;
     default: string;
   };
+  admin: {
+    exit: string;
+  };
 };
 
 export type RTChatMessage = {

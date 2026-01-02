@@ -26,9 +26,12 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { auth, subscribeToUnreadSystemMessages } from "@/lib/firebase";
 import { onAuthStateChanged, type User } from "firebase/auth";
+import { usePathname } from "next/navigation";
 
 export function BottomDockBar() {
+  const pathname = usePathname();
   const { theme, setTheme, styles } = useThemeStyles();
+
   const isDark = theme === "dark";
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -97,6 +100,10 @@ export function BottomDockBar() {
       "?"
     ).toUpperCase()
     : null;
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <>
