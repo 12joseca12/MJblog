@@ -21,6 +21,14 @@ module.exports = {
         protocol: "https",
         hostname: "media.istockphoto.com",
       },
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+      },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
+      },
     ],
   }, //eliminar en producción
 

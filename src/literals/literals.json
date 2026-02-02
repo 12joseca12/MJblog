@@ -93,5 +93,49 @@
   },
   "admin": {
     "exit": "Salir"
+  },
+  "blogCreation": {
+    "cardTitle": "Crear",
+    "modalTitle": "Crear Entrada de Blog",
+    "inputs": {
+      "title": "Título del Post",
+      "banner": "Imagen de Banner",
+      "tags": "Etiquetas"
+    },
+    "tagsMenu": {
+      "text": "Texto",
+      "accent": "Acentuado",
+      "link": "Enlace",
+      "image": "Imagen",
+      "video": "Video"
+    },
+    "placeholders": {
+      "text": "Escribe el contenido aquí...",
+      "accent": "Texto para resaltar...",
+      "link": "URL del enlace...",
+      "image": "Sube una imagen...",
+      "video": "Sube un video..."
+    },
+    "buttons": {
+      "accept": "Aceptar",
+      "cancel": "Cancelar",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "feature": "Destacar"
+    }
+  },
+  "itineraryCreation": {
+    "cardTitle": "Crear Itinerario",
+    "modalTitle": "Crear Itinerario",
+    "inputs": {
+      "title": "Título del Itinerario",
+      "banner": "Banner General"
+    },
+    "step": "Paso",
+    "addStep": "+ Añadir Paso",
+    "buttons": {
+      "accept": "Guardar Itinerario",
+      "cancel": "Cancelar"
+    }
   }
 }

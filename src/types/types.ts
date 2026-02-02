@@ -18,6 +18,15 @@ export type BlockKey =
  *  MODELOS DE DATOS (siempre aquí)
  ------------------------------------------- */
 
+export type ContentBlockType = "text" | "accent" | "link" | "image" | "video" | "banner";
+
+export interface ContentBlock {
+  id: string;
+  type: ContentBlockType;
+  value: string; // url for image/video, text content for others
+  order: number;
+}
+
 export interface PostModel {
   id: string;
   title: string;
@@ -27,7 +36,23 @@ export interface PostModel {
   date: string; // ISO string
   tags: string[];
   authors: string[];
-  content: string;
+  content: ContentBlock[]; // Changed from string to structured blocks
+}
+
+export interface ItineraryStep {
+  id: string;
+  order: number;
+  content: ContentBlock[];
+}
+
+export interface ItineraryModel {
+  id: string;
+  title: string;
+  slug: string;
+  banner: string;
+  steps: ItineraryStep[];
+  date: string;
+  createdAt?: any;
 }
 
 export interface TravelModel {
@@ -174,6 +199,50 @@ export type LiteralsJson = {
   };
   admin: {
     exit: string;
+  };
+  blogCreation: {
+    cardTitle: string;
+    modalTitle: string;
+    inputs: {
+      title: string;
+      banner: string;
+      tags: string;
+    };
+    tagsMenu: {
+      text: string;
+      accent: string;
+      link: string;
+      image: string;
+      video: string;
+    };
+    placeholders: {
+      text: string;
+      accent: string;
+      link: string;
+      image: string;
+      video: string;
+    };
+    buttons: {
+      accept: string;
+      cancel: string;
+      edit: string;
+      delete: string;
+      feature: string;
+    };
+  };
+  itineraryCreation: {
+    cardTitle: string;
+    modalTitle: string;
+    inputs: {
+      title: string;
+      banner: string;
+    };
+    step: string;
+    addStep: string;
+    buttons: {
+      accept: string;
+      cancel: string;
+    };
   };
 };
 

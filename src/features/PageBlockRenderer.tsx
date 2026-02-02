@@ -9,7 +9,7 @@ import { TravelsListBlock } from "@/components/TravelListBlock";
 import { TravelsSummaryBlock } from "@/components/TravelSummaryBlock";
 import { SpanHomeServices } from "@/components/SpanHomeServices";
 
-const BLOCK_REGISTRY: Record<BlockKey, React.ComponentType<any>> = {
+export const BLOCK_REGISTRY: Record<BlockKey, React.ComponentType<any>> = {
   hero: HeroBlock,
   featured: FeaturedBlock,
   postsList: PostsListBlock,
@@ -26,7 +26,7 @@ export function PageBlocksRenderer({ page }: { page: PageKey }) {
       {blocks.map((blockKey) => {
         const Block = BLOCK_REGISTRY[blockKey];
         return <Block key={blockKey} />;
-      })} 
+      })}
     </>
   );
 }
